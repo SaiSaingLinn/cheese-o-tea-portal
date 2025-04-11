@@ -41,7 +41,7 @@ function Logo() {
         to="/"
         className="group flex h-12 w-12 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
       >
-        <span>Cheese O Tea</span>
+        <img src="/img/cheese-o-tea-logo.png" className="h-8" />
       </Link>
     </SheetClose>
   );
@@ -70,7 +70,7 @@ export function Header() {
       <div className="flex-1 flex items-center">
         <Link to="/">
           <h1 className="text-xl font-bold text-primary inline-block">
-            Cheese O Tea
+            Logo
           </h1>
         </Link>
         <div className="hidden md:flex items-center mx-4">

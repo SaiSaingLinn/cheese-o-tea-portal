@@ -17,7 +17,7 @@ export function ModalManager() {
 
   return (
     <Dialog open={open} onOpenChange={handleChange}>
-      <DialogContent>
+      <DialogContent className="max-w-md mx-auto">
         <DialogHeader className="text-left">
           <DialogTitle>{option?.title}</DialogTitle>
           {option?.subtitle && (

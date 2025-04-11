@@ -1,3 +1,4 @@
+import { useAuthRoute } from "@/common/hooks/useAuthRoute";
 import { ModalManager } from "@/components/common";
 import { NotFoundPage } from "@/components/page";
 import {
@@ -7,6 +8,7 @@ import {
 } from "@tanstack/react-router";
 
 export function RootLayout() {
+  useAuthRoute();
   return (
     <>
       <ModalManager />

@@ -28,7 +28,7 @@ interface MenuItemProps {
 
 function MenuItem({ menu }: MenuItemProps) {
   const matchRoute = useMatchRoute();
-  const active = matchRoute({ to: menu.to });
+  const active = matchRoute({ to: menu?.to });
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -56,8 +56,20 @@ export function AdminLayout() {
   return (
     <div className="flex flex-col bg-muted/40 max-h-screen">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-4 px-2 sm:py-4">
-          <span>Cheese O Tea</span>
+        <nav className="flex flex-col items-center py-2">
+          <Link to="/">
+            <img
+              alt={"cheese-o-tea-logo"}
+              src="/img/cheese-o-tea-logo.png"
+              className={cn(
+                "h-5",
+                buttonVariants({
+                  variant: "ghost",
+                  size: "icon",
+                })
+              )}
+            />
+          </Link>
         </nav>
         <nav className="grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2">
           {adminMenus.map((menu: any) => (

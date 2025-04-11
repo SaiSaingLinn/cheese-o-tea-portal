@@ -1,6 +1,8 @@
 import svg from "@/assets/svg/success.svg";
 import { cn } from "@/components/ui/utils";
 import { Page } from "./Page";
+import { buttonVariants } from "../ui/button";
+import { Link } from "@tanstack/react-router";
 
 export function SuccessPage({
   className,
@@ -24,11 +26,19 @@ export function SuccessPage({
       >
         <img src={svg} width={100} />
         <h3 className="text-2xl font-bold tracking-tight">
-          {title || "Access Denied"}
+          {title || "Your order is received."}
         </h3>
         <p className="text-sm text-muted-foreground text-wrap">
-          {desctiption || "You don't have permission to access this page"}
+          {desctiption || "We will contact you shortly."}
         </p>
+        <Link
+          to="/"
+          className={cn(
+            buttonVariants({ variant: "default", size: "lg" }),
+          )}
+        >
+          Back to Home
+        </Link>
       </div>
     </Page>
   );

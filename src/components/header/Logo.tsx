@@ -7,16 +7,20 @@ interface LogoProps extends LinkProps {
   noFilter?: boolean;
 }
 export function Logo({ className, mr = true, noFilter, ...props }: LogoProps) {
-
   return (
     <Link
       to="/"
       className={cn("flex items-center space-x-2", mr && "mr-6")}
       {...props}
     >
-      <span className="hidden text-lg font-semibold sm:inline-block text-primary-foreground">
-        Cheese O Tea
-      </span>
+      <img
+        src="/img/cheese-o-tea-logo.png"
+        className={cn(
+          "h-5",
+          "brightness-0 invert",
+          className
+        )}
+      />
     </Link>
   );
 }

@@ -1,3 +1,4 @@
+import { useUserStore } from "@/common/stores/userStore";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,11 +9,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useNavigate } from "@tanstack/react-router";
 
 export function Profile() {
+  const { removeUser } = useUserStore();
+  const navigate = useNavigate();
   const handleLogout = () => {
-    // Perform logout logic here
-    console.log("Logout clicked");
+    removeUser();
+    navigate({
+      to: "/",
+    });
   };
   return (
     <DropdownMenu>

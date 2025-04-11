@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* width */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -35,8 +37,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%; */
+    --primary: 358 84% 52%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -95,6 +99,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Noto Sans', 'Rubik', sans-serif;
   }
 }
 

@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        noto: ['"Noto Sans"', 'sans-serif'],
+        rubik: ['"Rubik"', 'sans-serif'],
+      },
       animation: {
         progress: "progress .8s infinite linear",
         "accordion-down": "accordion-down 0.2s ease-out",

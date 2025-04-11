@@ -1,4 +1,5 @@
 import { otpSchema } from "@/common/config/schemas";
+import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -7,9 +8,10 @@ import { z } from "zod";
 
 interface OTPInputFormProps {
   onSubmit: (values: { otp: string }) => void;
+  loading?: boolean;
 }
 
-export function OTPInputForm({ onSubmit }: OTPInputFormProps) {
+export function OTPInputForm({ onSubmit, loading }: OTPInputFormProps) {
   const [timer, setTimer] = useState(60);
   const [resendDisabled, setResendDisabled] = useState(true);
 
@@ -80,13 +82,13 @@ export function OTPInputForm({ onSubmit }: OTPInputFormProps) {
       {errors.otp && (
         <p className="text-red-500 text-sm">
           {errors.otp.message}{" "}
-          <button
+          <Button
             type="button"
             onClick={handleTryAgain}
             className="text-blue-600 underline ml-1 text-sm cursor-pointer"
           >
             Try Again
-          </button>
+          </Button>
         </p>
       )}
 
@@ -94,24 +96,25 @@ export function OTPInputForm({ onSubmit }: OTPInputFormProps) {
         <span>
           {resendDisabled ? `${timer}s` : ""}
           {resendDisabled ? null : (
-            <button
+            <Button
               type="button"
               onClick={handleResend}
               className="text-blue-600 underline ml-2"
             >
               Resend
-            </button>
+            </Button>
           )}
         </span>
       </div>
 
-      <button
+      <Button
         type="submit"
         disabled={!!errors.otp}
         className="w-full bg-red-500 text-white py-2 rounded disabled:opacity-50"
+        loading={loading}
       >
         Continue
-      </button>
+      </Button>
     </form>
   );
 }
