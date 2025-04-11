@@ -18,11 +18,6 @@ build project:
 npm run build
 ```
 
-testing project:
-```
-npm run test
-```
-
 
 ## Structure
 
