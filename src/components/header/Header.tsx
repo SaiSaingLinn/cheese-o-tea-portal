@@ -70,7 +70,7 @@ export function Header() {
       <div className="flex-1 flex items-center">
         <Link to="/">
           <h1 className="text-xl font-bold text-primary inline-block">
-            Logo
+            Cheese O'Tea
           </h1>
         </Link>
         <div className="hidden md:flex items-center mx-4">
